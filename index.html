@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Opening SuperCricket...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            text-align: center; 
+            padding: 50px 20px; 
+            background-color: #121212; 
+            color: #ffffff; 
+        }
+        .btn { 
+            display: inline-block; 
+            padding: 14px 28px; 
+            background-color: #1A73E8; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 24px; 
+            margin-top: 24px; 
+            font-weight: bold; 
+            font-size: 16px;
+        }
+        p { color: #888; font-size: 14px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Opening SuperCricket Match Scorecard...</h2>
+    <p>If the app does not open automatically, please click the button below:</p>
+    <a id="app-link" class="btn" href="#">Open in SuperCricket</a>
+
+    <script>
+        // Extract matchId from URL parameter (e.g. ?matchId=64a2f8b...)
+        const urlParams = new URLSearchParams(window.location.search);
+        const matchId = urlParams.get('matchId');
+
+        if (matchId) {
+            const appSchemeUrl = "supercricket://match/" + matchId;
+            document.getElementById('app-link').href = appSchemeUrl;
+
+            // Automatically attempt to redirect to the app
+            window.location.replace(appSchemeUrl);
+
+            // Fallback: If app isn't installed after 3 seconds, redirect to Play Store/App Store
+            setTimeout(function() {
+                // Change to your actual app package name or website
+                window.location.replace("https://play.google.com/store/apps/details?id=com.rajeev2912.supercricket");
+            }, 3000);
+        } else {
+            document.body.innerHTML = "<h2>Invalid Match Link</h2><p>No match identifier was found in this link.</p>";
+        }
+    </script>
+</body>
+</html>
