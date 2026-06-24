@@ -26,6 +26,7 @@
         const playerMobile = urlParams.get('playerMobile');
         const playerName = urlParams.get('playerName');
         const tournamentId = urlParams.get('tournamentId');
+        const teamId = urlParams.get('teamId');
 
         let appSchemeUrl = "";
         if (matchId) {
@@ -34,6 +35,8 @@
             appSchemeUrl = "supercricket://player?playerMobile=" + encodeURIComponent(playerMobile) + "&playerName=" + encodeURIComponent(playerName || "");
         } else if (tournamentId) {
             appSchemeUrl = "supercricket://tournament/" + tournamentId;
+        } else if (teamId) {
+            appSchemeUrl = "supercricket://team/" + teamId;
         }
 
         if (appSchemeUrl) {
@@ -44,7 +47,7 @@
                 window.location.replace("https://play.google.com/store/apps/details?id=com.rajeev2912.supercricket");
             }, 3000);
         } else {
-            document.body.innerHTML = "<h2>Invalid Link</h2><p>No valid match, player, or tournament parameter was found.</p>";
+            document.body.innerHTML = "<h2>Invalid Link</h2><p>No valid match, player, tournament, or team parameter was found.</p>";
         }
     </script>
 </body>
