@@ -19,7 +19,6 @@
     <h2>Opening SuperCricket...</h2>
     <p>If the app does not open automatically, please click the button below:</p>
     <a id="app-link" class="btn" href="#">Open in SuperCricket</a>
-
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const matchId = urlParams.get('matchId');
@@ -27,7 +26,7 @@
         const playerName = urlParams.get('playerName');
         const tournamentId = urlParams.get('tournamentId');
         const teamId = urlParams.get('teamId');
-
+        const groundId = urlParams.get('groundId');
         let appSchemeUrl = "";
         if (matchId) {
             appSchemeUrl = "supercricket://match/" + matchId;
@@ -37,8 +36,9 @@
             appSchemeUrl = "supercricket://tournament/" + tournamentId;
         } else if (teamId) {
             appSchemeUrl = "supercricket://team/" + teamId;
+        } else if (groundId) {
+            appSchemeUrl = "supercricket://ground/" + groundId;
         }
-
         if (appSchemeUrl) {
             document.getElementById('app-link').href = appSchemeUrl;
             window.location.replace(appSchemeUrl);
@@ -47,7 +47,7 @@
                 window.location.replace("https://play.google.com/store/apps/details?id=com.rajeev2912.supercricket");
             }, 3000);
         } else {
-            document.body.innerHTML = "<h2>Invalid Link</h2><p>No valid match, player, tournament, or team parameter was found.</p>";
+            document.body.innerHTML = "<h2>Invalid Link</h2><p>No valid match, player, tournament, team, or ground parameter was found.</p>";
         }
     </script>
 </body>
