@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperCrik Support Center - FAQs & Contact</title>
+    <meta name="description" content="Get help with SuperCrik. Access frequently asked questions and connect with our 24/7 support team to resolve your scoring, tournament, or player profile queries.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #141b2d;
+            --primary: #10b981; /* Premium Emerald/Cricket Green */
+            --primary-glow: rgba(16, 185, 129, 0.15);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --transition-speed: 0.3s;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            color: #ffffff;
+        }
+        /* Container grid */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+        /* Header design */
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        .logo-badge {
+            background: linear-gradient(135deg, var(--primary), #059669);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px var(--primary-glow);
+            letter-spacing: 1px;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #ffffff, #d1d5db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        /* Live Support Call to Action Card */
+        .support-cta {
+            background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.1), transparent), var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        .support-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), #3b82f6);
+        }
+        .support-cta h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .support-cta p {
+            color: var(--text-muted);
+            margin-bottom: 1.8rem;
+            font-size: 1rem;
+        }
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all var(--transition-speed);
+        }
+        .btn-whatsapp {
+            background-color: #25d366; /* WhatsApp Green */
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            filter: brightness(1.05);
+        }
+        .btn-email {
+            background-color: #3b82f6; /* Modern Blue */
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+        .btn-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+            filter: brightness(1.05);
+        }
+        /* FAQ Styling */
+        .faq-section {
+            animation: fadeInUp 1s ease-out;
+        }
+        .faq-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        .faq-section h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+            margin: 0.5rem auto 0 auto;
+            border-radius: 2px;
+        }
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .faq-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color var(--transition-speed);
+        }
+        .faq-item:hover {
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+        .faq-question {
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color var(--transition-speed);
+        }
+        .faq-question h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding-right: 1rem;
+        }
+        .faq-icon {
+            font-size: 1rem;
+            color: var(--primary);
+            transition: transform var(--transition-speed);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-speed) cubic-bezier(0, 1, 0, 1);
+            background-color: rgba(255, 255, 255, 0.01);
+        }
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        /* Active state for accordion */
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            transition: max-height var(--transition-speed) ease-in-out;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        /* Footer footer */
+        footer {
+            margin-top: 5rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        /* Keyframes */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            .support-cta {
+                padding: 1.5rem;
+            }
+            .faq-question h3 {
+                font-size: 1rem;
+            }
+            .action-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .btn-action {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Header -->
+        <header>
+            <div class="logo-badge">SuperCrik</div>
+            <h1>Support Center</h1>
+            <p>We are dedicated to offering you a seamless ball-by-ball cricket scoring experience. Find quick answers below or contact our team directly.</p>
+        </header>
+        <!-- Live Support CTA -->
+        <section class="support-cta">
+            <h2>Need Assistance?</h2>
+            <p>Connect directly with our support specialists. We are available to resolve app issues, restore access, or answer questions.</p>
+            <div class="action-buttons">
+                <!-- WhatsApp Chat Link -->
+                <a href="https://wa.me/917042903860?text=Hello%2C%20I%20need%20some%20assistance%20with%20SuperCrik." class="btn-action btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+                <!-- Email Support Link -->
+                <a href="mailto:rajeev2912@gmail.com?subject=SuperCrik%20App%20Support%20Request" class="btn-action btn-email">
+                    <i class="far fa-envelope"></i> Email Support
+                </a>
+            </div>
+        </section>
+        <!-- FAQs Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <br>
+            <div class="faq-container">
+                
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I start scoring a match in SuperCrik?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            To score a match, navigate to your Dashboard and tap the <strong>Start Match</strong> button. You can choose to start a quick match or link it to an ongoing tournament. Select the batting/bowling teams, set the match configuration (overs, balls per over, wide rules), name your squads, and flip the coin to begin scoring ball-by-ball.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I add new players to squads mid-match?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes. If a squad member is missing or needs to be registered, you can tap the player registry from within the team configuration screen or select <strong>Add Player</strong> in the squad selection screen to dynamically register a profile and put them straight into the live squad.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I create and manage a tournament?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            From the Dashboard, tap on the <strong>Tournaments</strong> tab and select <strong>Create Tournament</strong>. You can configure tournament details, round settings, groups, and add participating teams. You can also assign co-admins to help log match scorecards by searching for their username or phone number.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What happens if the app closes or I lose internet during a match?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Don't worry! SuperCrik stores match state on your local device. If the app closes or your phone runs out of battery, simply reopen the app, and you can resume right from the last ball scored. Once you regain internet access, the scorecard will automatically synchronize with our servers.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I share match updates or my player profile?</h3>
+                        <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Every player profile, team page, and scorecard has a dedicated <strong>Share</strong> button (represented by a share icon). Tapping this allows you to automatically generate sharing links that friends can click to view your profile directly inside the app, or follow live matches ball-by-ball.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 SuperCrik App. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.6;">SuperCrik is built for the love of the game, strictly ad-free.</p>
+        </footer>
+    </div>
+    <!-- Accordion Script -->
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                
+                // Toggle current FAQ
+                item.classList.toggle('active');
+                // Collapse other FAQs (Optional - standard accordion behavior)
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
