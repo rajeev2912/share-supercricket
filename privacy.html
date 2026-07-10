@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - SuperCrik App</title>
+    <meta name="description" content="Privacy Policy for SuperCrik. Learn how we collect, use, and protect your information, and how to request account deletion.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #141b2d;
+            --primary: #10b981; /* Premium Emerald/Cricket Green */
+            --primary-glow: rgba(16, 185, 129, 0.15);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --transition-speed: 0.3s;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        /* Container grid */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+        /* Header design */
+        header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        .logo-badge {
+            background: linear-gradient(135deg, var(--primary), #059669);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px var(--primary-glow);
+            letter-spacing: 1px;
+        }
+        header h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #ffffff, #d1d5db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+        /* Policy Sections */
+        .policy-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            animation: fadeInUp 0.8s ease-out;
+            margin-bottom: 3rem;
+        }
+        section {
+            margin-bottom: 2.5rem;
+        }
+        section:last-child {
+            margin-bottom: 0;
+        }
+        section h2 {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.5rem;
+        }
+        section h2 i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        section p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        ul {
+            list-style-position: inside;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            padding-left: 0.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        strong {
+            color: #ffffff;
+        }
+        /* Highlight Alert Box */
+        .alert-box {
+            background-color: rgba(16, 185, 129, 0.05);
+            border-left: 4px solid var(--primary);
+            border-radius: 4px;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+        }
+        .alert-box p {
+            margin-bottom: 0;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+        /* Action Link */
+        .policy-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity var(--transition-speed);
+        }
+        .policy-link:hover {
+            text-decoration: underline;
+        }
+        /* Footer footer */
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        /* Keyframes */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .policy-card {
+                padding: 1.5rem;
+            }
+            section h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Header -->
+        <header>
+            <div class="logo-badge">SuperCrik</div>
+            <h1>Privacy Policy</h1>
+            <p><strong>Effective Date:</strong> July 10, 2026</p>
+        </header>
+        <!-- Main Content Card -->
+        <div class="policy-card">
+            <!-- Section 1: Introduction -->
+            <section>
+                <h2><i class="fa-solid fa-shield-halved"></i> 1. Introduction</h2>
+                <p>Welcome to <strong>SuperCrik</strong>. We value your privacy and are committed to protecting the information you share with us. This Privacy Policy details how our mobile application collects, uses, and safeguards your data when you use the app to track cricket scores, coordinate tournaments, and view player statistics.</p>
+                <p>SuperCrik is built with a strictly <strong>ad-free</strong> and user-centric approach. We do not sell your personal data to advertisers or third-party marketers.</p>
+            </section>
+            <!-- Section 2: Information We Collect -->
+            <section>
+                <h2><i class="fa-solid fa-database"></i> 2. Information We Collect</h2>
+                <p>To provide a functional and collaborative cricket scoring system, we collect certain details, including:</p>
+                <ul>
+                    <li><strong>Account Information:</strong> When you register on the app, we collect your name, phone number, and a secure PIN code to establish your identity.</li>
+                    <li><strong>Player Profiles & Team Logos:</strong> Any user profile pictures or team logos uploaded to configure rosters.</li>
+                    <li><strong>Match Statistics:</strong> Dynamic data related to matches, scorecards, tournament rounds, groups, statistics, and cricket stats you log ball-by-ball.</li>
+                </ul>
+                <div class="alert-box">
+                    <p><strong>Device Permission Disclosures:</strong>
+                    <br>
+                    • <strong>Location Services:</strong> We request location permissions strictly to help auto-detect your current city during signup. We do not track your location in the background.
+                    <br>
+                    • <strong>Photo Library Access:</strong> We request photo permissions only when you choose to upload a team logo, stadium picture, or profile picture. Access is user-initiated.
+                    </p>
+                </div>
+            </section>
+            <!-- Section 3: How We Use Your Information -->
+            <section>
+                <h2><i class="fa-solid fa-gears"></i> 3. How We Use Your Information</h2>
+                <p>The collected information is used solely to run the app features, including:</p>
+                <ul>
+                    <li>Generating dynamic player profile stats (runs, wickets, matches played).</li>
+                    <li>Publishing scorecard links that other users can follow in real-time.</li>
+                    <li>Sending live match notification updates through Apple/Expo Push Notification servers to tournament and team followers.</li>
+                    <li>Providing 24/7 technical customer support.</li>
+                </ul>
+            </section>
+            <!-- Section 4: Data Retention & Account Deletion -->
+            <section>
+                <h2><i class="fa-solid fa-trash-can"></i> 4. Account Deletion & Data Control</h2>
+                <p>We believe you should have complete control over your data. You have the right to request access to, edit, or delete your personal account information.</p>
+                <p><strong>How to Delete Your Account:</strong> You can delete your account and all associated profile data directly inside the app. Navigate to <strong>Settings > Delete Account</strong>. Tapping this option permanently removes your registered phone number, personal profile picture, and private credentials from our database immediately.</p>
+                <p>For additional deletion requests, please contact us directly at <a href="mailto:rajeev2912@gmail.com" class="policy-link">rajeev2912@gmail.com</a>.</p>
+            </section>
+            <!-- Section 5: Data Sharing -->
+            <section>
+                <h2><i class="fa-solid fa-share-nodes"></i> 5. Data Sharing & Security</h2>
+                <p>SuperCrik scorecards and player stats are public-facing features designed to let you share cricket updates with friends and family. Your statistics, profile name, and team names are visible to anyone using a shared link or search functionality.</p>
+                <p>We implement standard SSL encryption and secure database controls to guard your account records. We do not share your private phone numbers or personal logs with third parties.</p>
+            </section>
+            <!-- Section 6: Contact Us -->
+            <section>
+                <h2><i class="fa-solid fa-envelope"></i> 6. Contact Us</h2>
+                <p>If you have any questions or feedback regarding this Privacy Policy or data security in the SuperCrik app, please contact us:</p>
+                <ul>
+                    <li><strong>Email Support:</strong> <a href="mailto:rajeev2912@gmail.com" class="policy-link">rajeev2912@gmail.com</a></li>
+                    <li><strong>WhatsApp Chat:</strong> +91 70429 03860</li>
+                </ul>
+            </section>
+        </div>
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 SuperCrik App. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
