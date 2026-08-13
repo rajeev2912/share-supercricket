@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Opening SuperCricket...</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            text-align: center; padding: 50px 20px; background-color: #121212; color: #ffffff; 
+            text-align: center; 
+            padding: 50px 20px; 
+            background-color: #121212; 
+            color: #ffffff; 
         }
         .btn { 
-            display: inline-block; padding: 14px 28px; background-color: #1A73E8; 
-            color: white; text-decoration: none; border-radius: 24px; margin-top: 24px; font-weight: bold; 
+            display: inline-block; 
+            padding: 14px 28px; 
+            background-color: #1A73E8; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 24px; 
+            margin-top: 24px; 
+            font-weight: bold; 
+            font-size: 16px;
         }
-        p { color: #888; font-size: 14px; }
+        .btn:active {
+            opacity: 0.8;
+        }
+        p { color: #aaaaaa; font-size: 14px; margin-top: 12px; }
     </style>
 </head>
 <body>
     <h2>Opening SuperCricket...</h2>
-    <p>If the app does not open automatically, please click the button below:</p>
+    <p>If the app does not open automatically, please tap the button below:</p>
     <a id="app-link" class="btn" href="#">Open in SuperCricket</a>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
+        
+        // Extract parameters (supports shotId & storyId as well as matches, teams, tournaments & players)
+        const shotId = urlParams.get('shotId') || urlParams.get('storyId');
         const matchId = urlParams.get('matchId');
         const playerMobile = urlParams.get('playerMobile');
-        const playerName = urlParams.get('playerName');
-        const tournamentId = urlParams.get('tournamentId');
         const teamId = urlParams.get('teamId');
+        const tournamentId = urlParams.get('tournamentId');
         const groundId = urlParams.get('groundId');
-        let appSchemeUrl = "";
-        if (matchId) {
-            appSchemeUrl = "supercricket://match/" + matchId;
-        } else if (playerMobile) {
-            appSchemeUrl = "supercricket://player?playerMobile=" + encodeURIComponent(playerMobile) + "&playerName=" + encodeURIComponent(playerName || "");
-        } else if (tournamentId) {
-            appSchemeUrl = "supercricket://tournament/" + tournamentId;
-        } else if (teamId) {
-            appSchemeUrl = "supercricket://team/" + teamId;
-        } else if (groundId) {
-            appSchemeUrl = "supercricket://ground/" + groundId;
+        // Construct app scheme URL
+        const appSchemeUrl = 'supercricket://share' + window.location.search;
+        // Set fallback button link
+        const appBtn = document.getElementById('app-link');
+        if (appBtn) {
+            appBtn.href = appSchemeUrl;
         }
-        if (appSchemeUrl) {
-            document.getElementById('app-link').href = appSchemeUrl;
-            window.location.replace(appSchemeUrl);
-            setTimeout(function() {
-                // Fallback redirect to Play Store/Website if not installed
-                window.location.replace("https://play.google.com/store/apps/details?id=com.rajeev2912.supercricket");
-            }, 3000);
-        } else {
-            document.body.innerHTML = "<h2>Invalid Link</h2><p>No valid match, player, tournament, team, or ground parameter was found.</p>";
-        }
+        // Auto-redirect to SuperCricket app
+        window.location.href = appSchemeUrl;
     </script>
 </body>
 </html>
